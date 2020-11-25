@@ -224,26 +224,24 @@ Dooray! Service allows the IP ACL setting on the console page of each service.
 
 ### Project Members
 Even a non-organization member can serve as project member. 
-A project member can be given with many roles.  
-However, ADMIN and MEMBER who have the same role as SUPER ADMIN with access to all services, cannot have other roles at the same time. 
+You can grant multiple permissions to each project member. 
 
 #### Role of Project Management 
-| Task    | Role                                | ADMIN | MEMBER |  BILLING VIEWER |
-| ----------- | ---------------------------------------- | ----- | ------ | -------------------- |
-| Member Management | Register project members     | O     |        |                   |
-|             | Delete project members         | O     |        |                      |
-| Service Management | Activate service          | O     |        |                      |
-|             | Use service                 | O     | O      |                      |
-|             | Deactivate service       | O     |        |                      |
-| Usage Status | Status of service use           | O     |       | O                    |
-| Project Management | Delete projects           | O     |       |                      |
-|              | Delete projects (which have been created) |      | O       |                     |
+| Permission | Description |
+| --- | --- |
+| ADMIN | Create/Read/Update/Delete permissions on entire project |
+| MEMBER | Create/Read/Update/Delete permissions on all services within project |
+| BILLING VIEWER | Usage status Read permission |
+| PROJECT MANAGEMENT ADMIN | Update project basic info<br>Create/Read/Update/Delete all project Appkeys<Br>Create/Read/Update/Delete project permission groups<br>Enable/disable project services<br>Delete projects |
+| PROJECT MANAGEMENT VIEWER | Read project basic info<br>Read all project Appkeys<br>Read project permission groups |
+| PROJECT MEMBER ADMIN | Create/Read/Update/Delete project members |
+| PROJECT MEMBER VIEWER | Read project members |
+    
+#### Service Use Permissions
 
-
-#### Role of Service Use
-| Service | Role | Description |
+| Services | Permission | Description |
 | --- | --- | --- |
-| Infrastructure | ADMIN |  Create/Read/Update/Delete Infrastructure Service  |
+| Infrastructure | ADMIN | Create/Read/Update/Delete infrastructure services |
 | Infrastructure | MEMBER | Viewer VPC, Security Group, Auto Scale, Load Balancer Services. Create/Read/Update/Delete Other services |
 | Container Registry | ADMIN | Create/Read/Update/Delete Container Registry Service |
 | Container Registry | VIEWER | Read Container Registry Service  |
@@ -253,47 +251,69 @@ However, ADMIN and MEMBER who have the same role as SUPER ADMIN with access to a
 | RDS for MySQL | ADMIN | Create/Read/Update/Delete RDS for MySQL Service |
 | RDS for MS-SQL | ADMIN | Create/Read/Update/Delete RDS for MS-SQL Service |
 | EasyCache | ADMIN | Create/Read/Update/Delete EasyCache Service |
-| Gamebase | ADMIN | Create/Read/Update/Delete Gamebase Service |
+| Gamebase | Gamebase ADMIN | Create/Read/Update/Delete gamebase services |
+| Gamebase | Gamebase Analytics Viewer - ALL | Read all indexes |
+| Gamebase | Gamebase Analytics Viewer - excluding SALES | Read all indexes except for sales |
+| Gamebase | Gamebase Analytics Viewer - only Real-Time | Read real-time indexes |
+| Gamebase | Gamebase App ADMIN | Create/Read/Update/Delete app menus |
+| Gamebase | Gamebase App VIEWER | Read app menus |
+| Gamebase | Gamebase Ban ADMIN | Create/Read/Update/Delete User Ban menu |
+| Gamebase | Gamebase Ban Viewer | Read User Ban menu |
+| Gamebase | Gamebase CS ADMIN | Create/Read/Update/Delete Customer Center menus |
+| Gamebase | Gamebase CS Inquiry Support | Read/Update Customer Center Inquiry menus and Read Member menus |
+| Gamebase | Gamebase Coupon ADMIN | Create/Read/Update/Delete Coupon menus |
+| Gamebase | Gamebase Coupon VIEWER | Read Coupon menus |
+| Gamebase | Gamebase IAP ADMIN | Create/Read/Update/Delete Purchase menus |
+| Gamebase | Gamebase IAP VIEWER | Read Purchase menus |
+| Gamebase | Gamebase Leaderboard ADMIN | Create/Read/Update/Delete Leaderboard menus |
+| Gamebase | Gamebase Leaderboard VIEWER | Read Leaderboard menus |
+| Gamebase | Gamebase Management ADMIN | Create/Read/Update/Delete Management menus |
+| Gamebase | Gamebase Member ADMIN | Create/Read/Update/Delete Member menus |
+| Gamebase | Gamebase Member File Download | Read Member Download menu and download files |
+| Gamebase | Gamebase Member VIEWER | Read Member menus |
+| Gamebase | Gamebase Operation ADMIN | Create/Read/Update/Delete Operation menus |
+| Gamebase | Gamebase Operation VIEWER | Read Operation menus |
+| Gamebase | Gamebase Push ADMIN | Create/Read/Update/Delete Push menus |
+| Gamebase | Gamebase Push VIEWER | Read Push menus |
 | Leaderboard | ADMIN | Create/Read/Update/Delete Leaderboard Service |
 | Leaderboard | VIEWER |  Read Leaderboard Service |
-| Launching  | ADMIN | Create/Read/Update/Delete Launching Service  |
+| Launching | ADMIN | Create/Read/Update/Delete launching service |
 | Smart Downloader | ADMIN |  Create/Read/Update/Delete Smart Downloader Service |
-| AppGuard  | ADMIN | Create/Read/Update/Delete AppGuard Service |
-| Security Check  | ADMIN | Create/Read/Update/Delete Security Check Service |
-| Security Monitoring  | ADMIN | Create/Read/Update/Delete Security Monitoring Service |
-| Basic Security  | ADMIN |Create/Read/Update/Delete  Basic Security Service |
-| Mal-URL Detector  | ADMIN | Create/Read/Update/Delete Mal-URL Detector Service |
-| CAPTCHA  | ADMIN |  Create/Read/Update/Delete CAPTCHA Service  |
-| OTP  | ADMIN | Create/Read/Update/Delete OTP Service |
-| DBSafer  | ADMIN | Create/Read/Update/Delete  DBSafer Service |
-| WEB Firewall  | ADMIN |   Create/Read/Update/Delete WEB Firewall Service |
-| Vaccine  | ADMIN |  Create/Read/Update/Delete Vaccine Service |
-| Secure Key Manager  | ADMIN |  Create/Read/Update/Delete Secure Key Manager Service |
-| Secure Key Manager  | VIEWER |  Read Secure Key Manager Service |
-| CDN   | ADMIN |  Create/Read/Update/Delete CDN Service  |
-| Image  | ADMIN |  Create/Read/Update/Delete Image Service |
-| Push  | ADMIN |  Create/Read/Update/Delete Push Service  |
-| SMS  | ADMIN |Create/Read/Update/Delete  SMS  Service |
-| Email  | ADMIN |  Create/Read/Update/Delete Email Service |
-| KakaoTalk Bizmessage  | ADMIN |  Create/Read/Update/Delete KakaoTalk Bizmessage Service |
-| IAP  | ADMIN |  Create/Read/Update/Delete IAP Service  |
-| Mobile Device Info  | ADMIN |  Create/Read/Update/Delete Mobile Device Info Service |
-| Log & Crash Search  | ADMIN |   Create/Read/Update/Delete Log & Crash Search Service |
-| Maps  | ADMIN |  Create/Read/Update/Delete Maps Service |
-| ROLE  | ADMIN |  Create/Read/Update/Delete ROLE Service |
-| API Gateway  | ADMIN | Create/Read/Update/Delete API Gateway Service |
-| RTCS  | ADMIN |   Create/Read/Update/Delete RTCS Service |
-| Cloud Search  | ADMIN | Create/Read/Update/Delete Cloud Search Service |
-| Autocomplete  | ADMIN | Create/Read/Update/Delete AutocompleteService |
-| Corporation Search  | ADMIN |  Create/Read/Update/Delete Corporation Search Service |
-| Address Search  | ADMIN |   Create/Read/Update/Delete Address Search Service |
-| Deploy  | ADMIN |  Create/Read/Update/Delete Deploy Service |
-| Managed  | ADMIN | Create/Read/Update/Delete Managed Service |
-| Service Monitoring  | ADMIN | Create/Read/Update/Delete Service Monitoring Service |
-| Certificate Manager  | ADMIN | Create/Read/Update/Delete Certificate Manager Service |
-| Bill (e-Tax)  | ADMIN |  Create/Read/Update/Delete Bill (e-Tax) Service |
-| Bill (e-Tax)  | VIEWER |  Read Bill (e-Tax) Service |
-
+|(300) AppGuard | ADMIN | Create/Read/Update/Delete AppGuard service |
+| Security Check | ADMIN | Create/Read/Update/Delete Security Check service |
+| Security Monitoring | ADMIN | Create/Read/Update/Delete Security Monitoring service |
+| Basic Security | ADMIN | Create/Read/Update/Delete Basic Security service |
+| Mal-URL Detector | ADMIN | Create/Read/Update/Delete Mal-URL Detector service |
+| CAPTCHA | ADMIN | Create/Read/Update/Delete CAPTCHA service |
+| OTP | ADMIN | Create/Read/Update/Delete OTP service |
+| DBSafer | ADMIN | Create/Read/Update/Delete DBSafer service |
+| WEB Firewall | ADMIN | Create/Read/Update/Delete WEB Firewall service |
+| Vaccine | ADMIN | Create/Read/Update/Delete Vaccine service |
+| Secure Key Manager | ADMIN | Create/Read/Update/Delete Secure Key Manager service |
+| Secure Key Manager | MEMBER | Read Secure Key Manager service |
+| CDN | ADMIN | Create/Read/Update/Delete CDN service |
+| Image | ADMIN | Create/Read/Update/Delete Image service |
+| Push | ADMIN | Create/Read/Update/Delete Push services |
+| SMS | ADMIN | Create/Read/Update/Delete SMS service |
+| Email | ADMIN | Create/Read/Update/Delete Email service |
+| KakaoTalk Bizmessage | ADMIN | Create/Read/Update/Delete KakaoTalk Bizmessage service |
+| IAP | ADMIN | Create/Read/Update/Delete IAP service |
+| Mobile Device Info | ADMIN | Create/Read/Update/Delete Mobile Device Info service |
+| Log & Crash Search | ADMIN | Create/Read/Update/Delete Log & Crash Search services |
+| Maps | ADMIN | Create/Read/Update/Delete Maps service |
+| ROLE | ADMIN | Create/Read/Update/Delete ROLE service |
+| API Gateway | ADMIN | Create/Read/Update/Delete API Gateway service |
+| RTCS | ADMIN | Create/Read/Update/Delete RTCS service |
+| Cloud Search | ADMIN | Create/Read/Update/Delete Cloud Search service |
+| Autocomplete | ADMIN | Create/Read/Update/Delete Autocomplete service |
+| Corporation Search | ADMIN | Create/Read/Update/Delete Corporation Search service |
+| Address Search | ADMIN | Create/Read/Update/Delete Address Search service |
+| Deploy | ADMIN | Create/Read/Update/Delete Deploy service |
+| Managed | ADMIN | Create/Read/Update/Delete Managed service |
+| Service Monitoring | ADMIN | Create/Read/Update/Delete Service Monitoring service |
+| Certificate Manager | ADMIN | Create/Read/Update/Delete Certificate Manager service |
+| Bill (e-Tax) | ADMIN | Create/Read/Update/Delete Bill (e-Tax) service |
+| Bill (e-Tax) | MEMBER | Read Bill (e-Tax) service |
 
 
 ## Billing Management
